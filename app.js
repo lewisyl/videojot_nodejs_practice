@@ -2,6 +2,16 @@ const express = require("express");
 
 const app = express();
 
+// Index Route
+app.get("/", (req, res) => {
+	res.send("INDEXXXX");
+});
+
+// About Route
+app.get("/about", (req, res) => {
+	res.send("ABOUT");
+});
+
 const port = 5000;
 
 app.listen(port, () => {
