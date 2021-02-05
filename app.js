@@ -1,8 +1,20 @@
 const e = require("express");
 const express = require("express");
 const exphbs = require("express-handlebars");
+const mongoose = require("mongoose");
 
 const app = express();
+
+// Map global peomise - Get rid of warning
+mongoose.Promise = global.Promise;
+// Connect to momgoose
+mongoose
+	.connect("mongodb://localhost/videojot-dev", {
+		useUnifiedTopology: true,
+		useNewUrlParser: true,
+	})
+	.then(() => console.log("MongoDB Connected..."))
+	.catch((err) => console.log(err));
 
 // Handlebars middleware
 app.engine(
