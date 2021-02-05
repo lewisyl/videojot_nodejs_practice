@@ -1,3 +1,4 @@
+const e = require("express");
 const express = require("express");
 const exphbs = require("express-handlebars");
 
@@ -14,12 +15,15 @@ app.set("view engine", "handlebars");
 
 // Index Route
 app.get("/", (req, res) => {
-	res.send("INDEXXXX");
+	const title = "Welcome!";
+	res.render("index", {
+		title: title,
+	});
 });
 
 // About Route
 app.get("/about", (req, res) => {
-	res.send("ABOUT");
+	res.render("about");
 });
 
 const port = 5000;
