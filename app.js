@@ -68,7 +68,7 @@ app.post("/ideas", (req, res) => {
 			details: req.body.details,
 		});
 	} else {
-		res.send("Added!");
+		res.send("Added!!");
 	}
 });
 
