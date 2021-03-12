@@ -52,6 +52,7 @@ app.get("/ideas/add", (req, res) => {
 	res.render("ideas/add");
 });
 
+// Process Form
 app.post("/ideas", (req, res) => {
 	let errors = [];
 
